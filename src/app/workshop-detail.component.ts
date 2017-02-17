@@ -1,13 +1,14 @@
 import {
     Component,
-    OnInit, OnChanges,
+    OnInit, OnChanges, AfterViewInit,
     EventEmitter, Input, Output,
     trigger, state, style, animate, transition
 } from '@angular/core';
 
 import { Workshop } from './workshop';
 import { Subscription } from './subscription';
-import { SubscriptionService } from './subscription.service';
+import { Attendee } from './attendee';
+import { FirebaseService } from './firebase.service';
 
 @Component({
     moduleId: module.id,
@@ -26,40 +27,56 @@ import { SubscriptionService } from './subscription.service';
         ])
     ]
 })
-export class WorkshopDetailComponent {
+export class WorkshopDetailComponent implements AfterViewInit {
+    @Input() attendee: Attendee;
     @Input() workshop: Workshop;
     @Input() closable = true;
     @Input() visible: boolean;
     @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    subscription: Subscription = new Subscription(
-        new Date(),
-        'Juan',
-        'Perez',
-        'mail@mail.com',
-        1,
-        101,
-        'Vinculación con Egresados',
-        'título',
-        'Bob Burdensky',
-        'Washington',
-        'mex'
-    );
+    subscription = new Subscription();
 
     lista: Subscription[];
 
-    constructor(private subscriptionService: SubscriptionService) { }
+    // placeholder for the server response
+    response: string;
+
+    constructor(private _firebase: FirebaseService) {
+    }
+
+    ngAfterViewInit() {
+        this.subscription.registryDate = this.attendee.registryDate;
+        this.subscription.name = this.attendee.name;
+        this.subscription.lastName = this.attendee.lastName;
+        this.subscription.email = this.attendee.email;
+        // this.subscription.id = this.workshop.id;
+        // this.subscription.category = this.workshop.category;
+        // this.subscription.title = this.workshop.title;
+        // this.subscription.speaker = this.workshop.speaker;
+        // this.subscription.instituition = this.workshop.instituition;
+        // this.subscription.country = this.workshop.country;
+    }
 
     close(): void {
         this.visible = false;
         this.visibleChange.emit(this.visible);
     }
 
-    subscribe(): void {
-        this.subscriptionService.postSubscription()
-            .then(subs => {
-                this.lista.push(subs);
-            })
+
+    subscribeToWorkshop() {
+        this._firebase.setSubscription(this.subscription, this.workshop.id)
+            .subscribe(
+                user=> this.response = JSON.stringify(user),
+                error=> console.log(error)                
+            );
     }
+
+    // viewSubscriptions() { 
+    //     this._firebase.getSubscription()
+    //         .subscribe(
+    //             user=> this.response = JSON.stringify(user),
+    //             error=> console.log(error)                
+    //         );
+    // }
 
 }

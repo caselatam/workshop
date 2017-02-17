@@ -15,7 +15,7 @@ export class LoginComponent {
     //Attendee placeholder
     attendee = new Attendee();
 
-    attendee2 = new Attendee();
+
 
     // Esperience objects
     experience = [
@@ -29,7 +29,6 @@ export class LoginComponent {
     onSubmit() {
         this.attendee.registryDate = new Date();
         this.attendeeService.saveAttendee(this.attendee);
-        this.attendee2 = this.attendeeService.getAttendee();
         this.router.navigate(['/workshop']);
         
     }

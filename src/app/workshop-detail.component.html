@@ -1,25 +1,25 @@
 <!--<div *ngIf="workshop">-->
 <div [@dialog] *ngIf="visible" class="dialog">
   <h2>{{workshop.title}} detalles</h2>
-  <div><label>id: </label>{{workshop.id}}</div>
   <div>
-    level: {{workshop.level}}
+    Categoría: {{workshop.category}}
   </div>
   <div>
-    category: {{workshop.category}}
+    Ponente: {{workshop.speaker}}
   </div>
   <div>
-    Speaker: {{workshop.speaker}}
+    Institución: {{workshop.instituition}}
   </div>
   <div>
-    Instituition: {{workshop.instituition}}
+    País: {{workshop.country}}
   </div>
-  <div>
-    Country: {{workshop.country}}
-  </div>
-  <!--por borrar-->
+  
   <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
-  <button type="submit" (click)="subscribe()">Registrar Taller</button>
+  <button type="submit" (click)="subscribeToWorkshop()">Registrar Taller</button>
 </div>
 
 <div *ngIf="visible" class="overlay" (click)="close()"></div>
+
+
+
+

@@ -20,16 +20,20 @@ export class SubscriptionService {
         'Bob Burdensky',
         'Washington',
         'mex'
-    ); 
+    );
 
     constructor(private http: Http) { }
 
     postSubscription(): Promise<Subscription> {
         var subs = JSON.stringify(this.ubscription);
-        var header = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        headers.append( 'Content-Type', 'application/x-www-form-urlencoded' );
+
 
         return this.http
-            .post(this.url, subs, { headers: header })
+            // .post(this.url, subs, { headers: headers })
+            .post(this.url, subs)
             .toPromise()
             .then(res => res.json().data)
             .catch(this.handleError)

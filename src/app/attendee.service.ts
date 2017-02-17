@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
 
-import { Attendee } from './attendee'
+import { Attendee } from './attendee';
 
 @Injectable()
 export class AttendeeService {
-    attendee:Attendee;
+    attendee: Attendee;
+   
 
-    saveAttendee(attendee:Attendee):void{
+    saveAttendee(attendee: Attendee): void {
         this.attendee = attendee;
+        
     }
 
-    getAttendee():Attendee{
+    getAttendee(): Attendee {
         return this.attendee;
     }
+
+
+    
+
+
 }
