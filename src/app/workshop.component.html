@@ -1,0 +1,14 @@
+<div *ngIf="attendee">
+  <h1 *ngIf="level">Estamos en el nivel {{level}}</h1>
+
+  <figure class="workshop-cards"*ngFor="let ws of workshops" [class.selected]="ws === selectedWorkshop" (click)="onSelect(ws)">
+    <img [src]="'assets/images/workshops/' + ws.imgTitle" />
+    <figcaption><img [src]="'assets/images/workshops/' + ws.imgSpeaker"  class="profile" />
+      <h2>{{ws.title}}<span>{{ws.speaker}}- {{ws.instituition}}</span></h2>
+      <p>{{ws.country}}</p>
+      <button class="follow">Inscribirse</button>
+    </figcaption>
+  </figure>
+  <workshop-detail [workshop]="selectedWorkshop"></workshop-detail>
+</div>
+<button type="button" *ngIf="!attendee" routerLink="/login">Aún no te registras, regresa al inicio.</button>

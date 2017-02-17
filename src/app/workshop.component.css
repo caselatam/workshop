@@ -1,0 +1,167 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
+.workshop-cards {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+  line-height: 1.4em;
+  background-color: #141414;
+}
+.workshop-cards * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.workshop-cards img {
+  max-width: 100%;
+  vertical-align: top;
+  opacity: 0.85;
+}
+.workshop-cards figcaption {
+  width: 100%;
+  background-color: #141414;
+  padding: 25px;
+  position: relative;
+}
+.workshop-cards figcaption:before {
+  position: absolute;
+  content: '';
+  bottom: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 55px 0 0 400px;
+  border-color: transparent transparent transparent #141414;
+}
+.workshop-cards figcaption button {
+  padding: 5px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  margin: 10px 0;
+  display: inline-block;
+  opacity: 0.65;
+  width: 47%;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  /*text-decoration: none;*/
+}
+.workshop-cards figcaption button:hover {
+  opacity: 1;
+}
+.workshop-cards .profile {
+  border-radius: 50%;
+  position: absolute;
+  bottom: 100%;
+  left: 25px;
+  z-index: 1;
+  max-width: 90px;
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.workshop-cards .follow {
+  margin-right: 6%;
+  border-color: #2980b9;
+  color: #2980b9;
+}
+.workshop-cards h2 {
+  margin: 0 0 5px;
+  font-weight: 300;
+}
+.workshop-cards h2 span {
+  display: block;
+  font-size: 0.5em;
+  color: #2980b9;
+}
+.workshop-cards p {
+  margin: 0 0 10px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+.workshop-cards:hover:before,
+.workshop-cards.hover:before {
+  bottom: 0;
+  box-shadow: 0 0 0px white;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+.heroes li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+.heroes li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.heroes .text {
+  position: relative;
+  top: -3px;
+}
+
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.heroes .detail {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  
+}

@@ -1,0 +1,46 @@
+<div (submit)="onSubmit()">
+  <form class="login">
+    <p class="title">¿Cuáles son tus datos?</p>
+    <input type="text" name="firstname" [(ngModel)]="attendee.name" placeholder="Nombre" required autofocus>
+    <i class="fa fa-user"></i>
+    <input type="text" name="lastname" [(ngModel)]="attendee.lastName" placeholder="Apellidos" required>
+    <i class="fa fa-user"></i>
+    <input type="email" name="email" [(ngModel)]="attendee.email" placeholder="Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+    <i class="fa fa-key"></i>
+    <select name="asistencia" class="form-control input-lg" id="experience" [(ngModel)]="attendee.level" required>
+        <option value="" selected>¿Haz asistido al Congreso CASE América Latina?</option>
+        <option *ngFor="let exp of experience" [ngValue]="exp.level">{{exp.description}}</option>
+    </select>
+    <button type="submit">
+      <svg version="1.1" id="svg-spinner" xmlns="http://www.w3.org/2000/svg" width="50px" height="46.366px" viewBox="0 0 50 46.366">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#B79359" d="M50,46.138c-1.964-1.952-3.938-3.895-5.891-5.86
+          C38.67,34.801,33.24,29.313,27.808,23.83c-0.128-0.13-0.25-0.266-0.5-0.533c7.669,0,15.181,0,22.692,0
+          C50,30.911,50,38.524,50,46.138z" />
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#75818C" d="M0,46.123c8.565-7.207,16.954-14.266,25.427-21.395
+          c0,0.466,0.001,0.827-0.001,1.187c-0.03,6.495-0.075,12.99-0.072,19.485c0,0.804-0.235,0.976-1.007,0.965
+          c-7.879-0.104-15.76-0.167-23.64-0.242C0.55,46.122,0.392,46.123,0,46.123z" />
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#B79359" d="M0.096,0.25C7.56,7.598,14.912,14.837,22.259,22.07
+          c-0.17,0.299-0.413,0.189-0.606,0.19c-6.957,0.011-13.913,0.008-20.869,0.03c-0.56,0.002-0.734-0.135-0.733-0.716
+          c0.019-6.957,0.01-13.914,0.009-20.87C0.059,0.603,0.074,0.502,0.096,0.25z" />
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#75818C" d="M49.807,0.179C42.05,6.946,34.277,13.727,26.52,20.495
+          c-0.296-0.127-0.189-0.348-0.189-0.514c-0.012-6.413-0.012-12.825-0.027-19.237C26.302,0.272,26.344-0.001,26.941,0
+          c7.5,0.015,14.999,0.006,22.498,0.005C49.564,0.005,49.717-0.045,49.807,0.179z" />
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#EF3941" d="M24.134,1.483c0.116,6.616,0.229,13.042,0.343,19.459
+          c-0.192,0.106-0.262-0.049-0.35-0.133c-3.239-3.142-6.479-6.284-9.713-9.431c-0.204-0.199-0.587-0.337-0.152-0.738
+          C17.518,7.641,20.756,4.622,24.134,1.483z" />
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#EF3941" d="M27.778,45.091c-0.266-6.761-0.524-13.356-0.791-20.166
+          c0.388,0.424,0.667,0.722,0.938,1.027c3,3.368,5.998,6.738,9.001,10.103c0.264,0.295,0.522,0.487,0.059,0.894
+          c-2.961,2.599-5.893,5.231-8.834,7.852C28.075,44.868,27.991,44.926,27.778,45.091z" />
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#EF3941" d="M3.267,24.45c6.688-0.227,13.214-0.448,19.958-0.676
+          c-0.795,0.725-1.44,1.318-2.092,1.904c-2.887,2.596-5.79,5.174-8.652,7.798c-0.518,0.474-0.75,0.408-1.187-0.083
+          c-2.377-2.683-4.794-5.329-7.196-7.989C3.848,25.127,3.607,24.842,3.267,24.45z" />
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#EF3941" d="M48.278,21.129c-6.531,0.117-13.004,0.233-19.66,0.353
+          c1.344-1.194,2.552-2.27,3.763-3.343c2.337-2.072,4.677-4.139,7.01-6.215c0.281-0.25,0.452-0.443,0.817-0.028
+          c2.653,3.019,5.339,6.009,8.012,9.011C48.25,20.94,48.247,21.003,48.278,21.129z" />
+      </svg>
+      <span class="state">Siguiente</span>
+    </button>
+  </form>
+  <footer><img src="assets/images/CASE-UPAEP-logo.png" ></footer>
+</div>
+

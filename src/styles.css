@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  width: 100%;
+  background: url("assets/images/catedral-puebla-nocturna.jpg") 50% fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  /*width: 100%;*/
+  min-height: 100%;
+  padding: 20px;
+  background: rgba(0, 77, 113, 0.85);
+}

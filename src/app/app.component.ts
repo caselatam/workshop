@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
 
+import { Attendee } from './attendee';
+import { AttendeeService } from './attendee.service';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    moduleId: module.id,
+    selector: 'app-root',
+    template: `
+        <div class="wrapper">
+            <h1>{{title}}</h1>
+            <router-outlet></router-outlet>
+        </div>
+        `,
+    
 })
 export class AppComponent {
-  title = 'app works!';
+    title = 'Registro a los Talleres';
 }
