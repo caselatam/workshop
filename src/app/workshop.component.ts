@@ -19,6 +19,9 @@ export class WorkshopComponent implements OnInit {
   filteredWorkshops: Array<Workshop> = this.workshops;
   attendee = new Attendee();
 
+  // pruebas
+  showDialog: boolean = false;
+
   constructor(private workshopService: WorkshopService, private attendeeService: AttendeeService) { }
 
   ngOnInit(): void {
@@ -29,7 +32,6 @@ export class WorkshopComponent implements OnInit {
 
   getWorkshops(): void {
     this.workshopService.getFilteredWorkshops().then(workshops => this.workshops = workshops);
-    // this.workshopService.getWorkshops().then(workshops => this.workshops = workshops);
   }
 
   getAttendee() {
@@ -38,6 +40,9 @@ export class WorkshopComponent implements OnInit {
 
   onSelect(ws: Workshop): void {
     this.selectedWorkshop = ws;
+    // prueba
+    this.showDialog = !this.showDialog;
+
   }
 
   changeLevel(level: number): void {

@@ -9,6 +9,7 @@ import { WorkshopComponent } from './workshop.component';
 import { WorkshopDetailComponent } from './workshop-detail.component';
 import { LoginComponent } from './login.component';
 import { AttendeeService } from './attendee.service';
+import { SubscriptionService } from './subscription.service';
 
 
 @NgModule({
@@ -29,16 +30,21 @@ import { AttendeeService } from './attendee.service';
         pathMatch: 'full'
       },
       {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
         path: 'workshop',
         component: WorkshopComponent
       },
       {
-        path: 'login',
-        component: LoginComponent
+        path: 'workshop-detail',
+        component: WorkshopDetailComponent
       },
+      
     ])
   ],
-  providers: [AttendeeService],
+  providers: [AttendeeService, SubscriptionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
