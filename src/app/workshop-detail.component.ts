@@ -4,6 +4,7 @@ import {
     EventEmitter, Input, Output,
     trigger, state, style, animate, transition
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Workshop } from './workshop';
 import { Subscription } from './subscription';
@@ -27,24 +28,22 @@ import { FirebaseService } from './firebase.service';
         ])
     ]
 })
-export class WorkshopDetailComponent implements AfterViewInit {
-    @Input() attendee: Attendee;
-    @Input() workshop: Workshop;
-    @Input() closable = true;
-    @Input() visible: boolean;
-    @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+export class WorkshopDetailComponent implements OnInit {
+    @Input() public attendee: Attendee;
+    @Input() public workshop: Workshop;
+    @Input() public closable = true;
+    @Input() public visible: boolean;
+    @Output() public visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    subscription = new Subscription();
-
-    lista: Subscription[];
+    public subscription = new Subscription();
 
     // placeholder for the server response
-    response: string;
+    public response: string;
 
-    constructor(private _firebase: FirebaseService) {
+    constructor(private _firebase: FirebaseService, private router: Router) {
     }
 
-    ngAfterViewInit() {
+    ngOnInit() {
         this.subscription.registryDate = this.attendee.registryDate;
         this.subscription.name = this.attendee.name;
         this.subscription.lastName = this.attendee.lastName;
@@ -57,26 +56,20 @@ export class WorkshopDetailComponent implements AfterViewInit {
         // this.subscription.country = this.workshop.country;
     }
 
-    close(): void {
+    public close(): void {
         this.visible = false;
         this.visibleChange.emit(this.visible);
     }
 
 
-    subscribeToWorkshop() {
+    public subscribeToWorkshop() {
         this._firebase.setSubscription(this.subscription, this.workshop.id)
             .subscribe(
-                user=> this.response = JSON.stringify(user),
-                error=> console.log(error)                
+            user => this.response = JSON.stringify(user),
+            error => console.log(error)
             );
+        this.router.navigate(['/success']);
     }
 
-    // viewSubscriptions() { 
-    //     this._firebase.getSubscription()
-    //         .subscribe(
-    //             user=> this.response = JSON.stringify(user),
-    //             error=> console.log(error)                
-    //         );
-    // }
 
 }

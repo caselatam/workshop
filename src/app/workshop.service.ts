@@ -10,11 +10,11 @@ export class WorkshopService {
 
     constructor(private attendeeService: AttendeeService) { }
 
-    getWorkshops(): Promise<Workshop[]> {
+    public getWorkshops(): Promise<Workshop[]> {
         return Promise.resolve(WORKSHOPS);
     }
 
-    getFilteredWorkshops(): Promise<Workshop[]> {
+    public getFilteredWorkshops(): Promise<Workshop[]> {
         return Promise.resolve(WORKSHOPS)
             .then(workshops =>
                 workshops.filter(workshop => {
@@ -22,7 +22,6 @@ export class WorkshopService {
                         return workshop.level <= this.attendeeService.attendee.level;
                     }
                     return workshop.level === this.attendeeService.attendee.level;
-
                 }));
     }
 }

@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { WorkshopComponent } from './workshop.component';
 import { WorkshopDetailComponent } from './workshop-detail.component';
 import { LoginComponent } from './login.component';
+import { SuccessComponent } from './success.component';
+
 import { AttendeeService } from './attendee.service';
 import { FirebaseService } from './firebase.service';
 
@@ -17,7 +19,8 @@ import { FirebaseService } from './firebase.service';
     AppComponent,
     WorkshopComponent,
     WorkshopDetailComponent,
-    LoginComponent
+    LoginComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,10 @@ import { FirebaseService } from './firebase.service';
         path: 'workshop-detail',
         component: WorkshopDetailComponent
       },
+      {
+        path: 'success',
+        component: SuccessComponent
+      }
 
     ])
   ],

@@ -34,6 +34,11 @@ export class WorkshopComponent implements OnInit {
     this.workshopService.getFilteredWorkshops().then(workshops => this.workshops = workshops);
   }
 
+  // TODO:BORRAR
+  getDemoWorkshops() {
+    this.workshopService.getWorkshops().then(workshops => this.workshops = workshops);
+  }
+
   getAttendee() {
     this.attendee = this.attendeeService.getAttendee();
   }

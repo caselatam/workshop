@@ -1,17 +1,19 @@
-<div (submit)="onSubmit()">
-  <form class="login">
-    <p class="title">¿Cuáles son tus datos?</p>
-    <input type="text" name="firstname" [(ngModel)]="attendee.name" placeholder="Nombre" required autofocus>
-    <i class="fa fa-user"></i>
-    <input type="text" name="lastname" [(ngModel)]="attendee.lastName" placeholder="Apellidos" required>
-    <i class="fa fa-user"></i>
-    <input type="email" name="email" [(ngModel)]="attendee.email" placeholder="Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-    <i class="fa fa-key"></i>
-    <select name="asistencia" class="form-control input-lg" id="experience" [(ngModel)]="attendee.level" required>
-        <option value="" selected>¿Haz asistido al Congreso CASE América Latina?</option>
+<div class="row  justify-content-md-center">
+  <div class="col col-md-5 col-lg-4">
+    <form class="login" (submit)="onSubmit()">
+      <p class="title">¿Cuáles son tus datos?</p>
+      <input type="text" name="firstname" [(ngModel)]="attendee.name" placeholder="Nombre" required autofocus>
+      <i class="fa fa-user"></i>
+      <input type="text" name="lastname" [(ngModel)]="attendee.lastName" placeholder="Apellidos" required>
+      <i class="fa fa-user"></i>
+      <input type="email" name="email" [(ngModel)]="attendee.email" placeholder="Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+      <i class="fa fa-key"></i>
+      <label for="experience">¿Haz asistido al Congreso CASE América Latina?:</label>
+      <select name="asistencia" class="form-control input-lg" id="experience" [(ngModel)]="attendee.level" required>
+        
         <option *ngFor="let exp of experience" [ngValue]="exp.level">{{exp.description}}</option>
     </select>
-    <button type="submit">
+      <button type="submit">
       <svg version="1.1" id="svg-spinner" xmlns="http://www.w3.org/2000/svg" width="50px" height="46.366px" viewBox="0 0 50 46.366">
         <path fill-rule="evenodd" clip-rule="evenodd" fill="#B79359" d="M50,46.138c-1.964-1.952-3.938-3.895-5.891-5.86
           C38.67,34.801,33.24,29.313,27.808,23.83c-0.128-0.13-0.25-0.266-0.5-0.533c7.669,0,15.181,0,22.692,0
@@ -40,7 +42,7 @@
       </svg>
       <span class="state">Siguiente</span>
     </button>
-  </form>
-  <footer><img src="assets/images/CASE-UPAEP-logo.png" ></footer>
+    </form>
+  </div>
 </div>
 

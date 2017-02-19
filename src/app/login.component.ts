@@ -13,9 +13,7 @@ import { AttendeeService } from './attendee.service';
 })
 export class LoginComponent {
     //Attendee placeholder
-    attendee = new Attendee();
-
-
+    public  attendee = new Attendee();
 
     // Esperience objects
     experience = [
@@ -26,7 +24,7 @@ export class LoginComponent {
 
     constructor(private router: Router, private attendeeService: AttendeeService) { }
 
-    onSubmit() {
+    public onSubmit() {
         this.attendee.registryDate = new Date();
         this.attendeeService.saveAttendee(this.attendee);
         this.router.navigate(['/workshop']);

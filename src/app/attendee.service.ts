@@ -4,20 +4,14 @@ import { Attendee } from './attendee';
 
 @Injectable()
 export class AttendeeService {
-    attendee: Attendee;
+    private attendee: Attendee;
    
-
-    saveAttendee(attendee: Attendee): void {
+    public saveAttendee(attendee: Attendee): void {
         this.attendee = attendee;
         
     }
 
-    getAttendee(): Attendee {
+    public getAttendee(): Attendee {
         return this.attendee;
     }
-
-
-    
-
-
 }

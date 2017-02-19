@@ -1,12 +1,20 @@
 <div *ngIf="attendee">
-  <figure class="workshop-cards" *ngFor="let ws of workshops" [class.selected]="ws === selectedWorkshop" (click)="onSelect(ws)">
-    <img [src]="'assets/images/workshops/' + ws.imgTitle" />
-    <figcaption><img [src]="'assets/images/workshops/' + ws.imgSpeaker" class="profile" />
-      <h2>{{ws.title}}<span>{{ws.speaker}}- {{ws.instituition}}</span></h2>
-      <p>{{ws.country}}</p>
-      <button class="follow">Inscribirse</button>
-    </figcaption>
-  </figure>
-  <workshop-detail [(visible)]="showDialog" [workshop]="selectedWorkshop" [attendee]="attendee"></workshop-detail>
+  <div class="row">
+    <div class="col col-md-4" *ngFor="let ws of workshops">
+      <figure class="workshop-cards"  [class.selected]="ws === selectedWorkshop" (click)="onSelect(ws)">
+        <img [src]="'assets/images/workshops/' + ws.imgTitle" />
+        <figcaption><img [src]="'assets/images/workshops/' + ws.imgSpeaker" class="profile" />
+          <h2>{{ws.title}}<span>{{ws.speaker}}- {{ws.instituition}}</span></h2>
+          <p>{{ws.country}}</p>
+          <button class="follow ">Inscribirse</button>
+        </figcaption>
+      </figure>
+      <workshop-detail [(visible)]="showDialog" [workshop]="selectedWorkshop" [attendee]="attendee"></workshop-detail>
+    </div>
+  </div>
 </div>
-<button type="button" *ngIf="!attendee" routerLink="/login">Aún no te registras, regresa al inicio.</button>
+<div class="row justify-content-md-center" *ngIf="!attendee">
+  <div class="col col-md-5">
+    <button type="button" class="btn btn-danger btn-block" routerLink="/login">Aún no te registras, Da click para regresar al inicio.</button>
+  </div>
+</div>

@@ -13,20 +13,20 @@ import { Subscription } from './subscription';
 @Injectable()
 export class FirebaseService {
 
-    url: string = "https://case17-workshop.firebaseio.com/user.json";
+    private url: string = "https://case17-workshop.firebaseio.com/user.json";
     
 
     constructor(private http: Http) { }
 
-    setSubscription(subscription: Subscription, id: number) {
+    public setSubscription(subscription: Subscription, id: number) {
         var body = JSON.stringify({ subscription, id: id });
 
         return this.http.post(this.url, body)
             .map(response => response.json());
     }
 
-    getSubscription() {
-        return this.http.get(this.url + 'user.json')
+    public getSubscription() {
+        return this.http.get(this.url)
              .toPromise()
             .then(res => res.json().data)
             .catch(this.handleError);

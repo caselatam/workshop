@@ -62,8 +62,8 @@ export const WORKSHOPS: Workshop[] = [
     category: 'Comunicación y Mercadotecnia',
     title: 'Sácale el jugo a tu agencia de investigación: 5 pasos para lograrlo',
     imgTitle:'203-innovation.png',
-    speaker: 'Raúl Méndez',
-    imgSpeaker:'raul-mendez.jpg',
+    speaker: 'Claudia Angel',
+    imgSpeaker:'claudia-angel.jpg',
     instituition: 'Insighter Lexia',
     country: 'Mexico'
   },
