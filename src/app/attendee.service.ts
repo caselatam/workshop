@@ -4,7 +4,7 @@ import { Attendee } from './attendee';
 
 @Injectable()
 export class AttendeeService {
-    private attendee: Attendee;
+     attendee: Attendee;
    
     public saveAttendee(attendee: Attendee): void {
         this.attendee = attendee;
