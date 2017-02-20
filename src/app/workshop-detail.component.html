@@ -1,5 +1,6 @@
-<div [@dialog] *ngIf="visible" class="dialog">
-  <h2>{{workshop.title}} detalles</h2>
+<div [@dialog] *ngIf="visible" class="dialog text-center">
+  <h2>{{workshop.title}}</h2>
+  <small>Recuerda que al ser los talleres simultaneos, solo podrás inscribirte a UNO.</small>
   <div>
     Categoría: {{workshop.category}}
   </div>
@@ -10,7 +11,7 @@
     Institución: {{workshop.instituition}}
   </div>
   <div>
-    País: {{workshop.country}}
+    Procedencia del ponente: {{workshop.country}}
   </div>
   
   <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
