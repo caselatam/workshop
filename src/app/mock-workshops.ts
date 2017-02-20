@@ -10,7 +10,7 @@ export const WORKSHOPS: Workshop[] = [
     speaker: 'Celso Castañeda',
     imgSpeaker:'celso-castaneda.jpg',
     instituition: 'Amigo Daniel',
-    country: 'Mexico',
+    country: 'México',
   },
   {
     id: 102,
@@ -21,7 +21,7 @@ export const WORKSHOPS: Workshop[] = [
     speaker: 'Rafael Romero',
     imgSpeaker:'rafael-romero.jpg',
     instituition: 'Universidad Panamericana',
-    country: 'Mexico'
+    country: 'México'
   },
   {
     id: 103,
@@ -43,7 +43,7 @@ export const WORKSHOPS: Workshop[] = [
     speaker: 'Alejandra Naranjo',
     imgSpeaker:'alejandra-naranjo.jpg',
     instituition: 'American School Foundation',
-    country: 'Mexico'
+    country: 'México'
   },
   {
     id: 202,
@@ -65,7 +65,7 @@ export const WORKSHOPS: Workshop[] = [
     speaker: 'Claudia Angel',
     imgSpeaker:'claudia-angel.jpg',
     instituition: 'Insighter Lexia',
-    country: 'Mexico'
+    country: 'México'
   },
   {
     id: 301,
@@ -87,7 +87,7 @@ export const WORKSHOPS: Workshop[] = [
     speaker: 'Germán Campos',
     imgSpeaker:'german-campos.jpg',
     instituition: 'Universidad Anáhuac México',
-    country: 'Mexico'
+    country: 'México'
   },
   {
     id: 303,
