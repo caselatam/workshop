@@ -1,12 +1,15 @@
 <div *ngIf="attendee">
   <div class="row">
     <div class="col col-md-4" *ngFor="let ws of workshops">
-      <figure class="workshop-cards"  [class.selected]="ws === selectedWorkshop" (click)="onSelect(ws)">
+      <figure class="workshop-cards" [class.selected]="ws === selectedWorkshop" (click)="onSelect(ws)">
         <img [src]="'assets/images/workshops/' + ws.imgTitle" />
         <figcaption><img [src]="'assets/images/workshops/' + ws.imgSpeaker" class="profile" />
           <h2>{{ws.title}}<span>{{ws.speaker}}- {{ws.instituition}}</span></h2>
           <p>{{ws.country}}</p>
-          <button class="follow ">Inscribirse</button>
+          <div class="level">
+            Nivel: <span [innerHTML]="estrellas(ws.level)"></span>
+          </div>
+          <button class="follow">Inscribirse</button>
         </figcaption>
       </figure>
       <workshop-detail [(visible)]="showDialog" [workshop]="selectedWorkshop" [attendee]="attendee"></workshop-detail>

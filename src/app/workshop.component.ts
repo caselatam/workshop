@@ -66,5 +66,13 @@ export class WorkshopComponent implements OnInit {
       .filter(ws => ws.level === 3);
     return tempWorkshop;
   }
+
+  estrellas(level: number): string {
+    let starString: string = '';
+    for (let i = 0; i < level; i++) {
+      starString += '<i class="fa fa-star" aria-hidden="true"></i>';
+    }
+    return starString;
+  }
 }
 

@@ -3,11 +3,11 @@
     <form class="login" (submit)="onSubmit()">
       <p class="title">¿Cuáles son tus datos?</p>
       <input type="text" name="firstname" [(ngModel)]="attendee.name" placeholder="Nombre" required autofocus>
-      <i class="fa fa-user"></i>
+      <!--<i class="fa fa-user"></i>-->
       <input type="text" name="lastname" [(ngModel)]="attendee.lastName" placeholder="Apellidos" required>
-      <i class="fa fa-user"></i>
+      <!--<i class="fa fa-user"></i>-->
       <input type="email" name="email" [(ngModel)]="attendee.email" placeholder="Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-      <i class="fa fa-key"></i>
+      <!--<i class="fa fa-key"></i>-->
       <label for="experience">¿Haz asistido al Congreso CASE América Latina?:</label>
       <select name="asistencia" class="form-control input-lg" id="experience" [(ngModel)]="attendee.level" required>
         
