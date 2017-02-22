@@ -1,6 +1,16 @@
 <div class="row  justify-content-md-center">
   <div class="col col-md-5 col-lg-4">
     <form class="login" (submit)="onSubmit()">
+      <div class="row alert">
+        <div class="col-sm-2">
+          <i class="fa fa-exclamation fa-5x" aria-hidden="true"></i>  
+        </div>
+        <div class="col-sm-10">
+          <b>TODOS LOS TALLERES SON SIMULTÁNEOS,</b> <br> solo podrás inscribirte a UNO.<br>
+        </div>
+      </div>
+
+      <small class="note ">En caso de inscribirse a múltiples talleres se les asignará su primera opción </small>
       <p class="title">¿Cuáles son tus datos?</p>
       <input type="text" name="firstname" [(ngModel)]="attendee.name" placeholder="Nombre" required autofocus>
       <!--<i class="fa fa-user"></i>-->
@@ -45,4 +55,3 @@
     </form>
   </div>
 </div>
-

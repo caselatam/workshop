@@ -1,46 +1,64 @@
-#svg-spinner{
-   
+@import url('https://fonts.googleapis.com/css?family=Passion+One');
+
+#svg-spinner {
   /*Animation code for older Chrome, Safari, Opera*/
   -webkit-transition-property: -webkit-transform;
   -webkit-transition-duration: 1.2s;
   -webkit-animation-name: rotate;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-  
   /*Animation code for older Firefox*/
   -moz-transition-property: -moz-transform;
-  -moz-animation-name: rotate; 
-  -moz-animation-duration: 1.2s; 
+  -moz-animation-name: rotate;
+  -moz-animation-duration: 1.2s;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
-  
   /*Default animation code*/
   transition-property: transform;
-  animation-name: rotate; /*Call to @keyframe rule*/
-  animation-duration: 3.5s; /*Change to speed up or slow down the animation*/
-  animation-iteration-count: infinite; /*Make the animation go forever*/
+  animation-name: rotate;
+  /*Call to @keyframe rule*/
+  animation-duration: 3.5s;
+  /*Change to speed up or slow down the animation*/
+  animation-iteration-count: infinite;
+  /*Make the animation go forever*/
   animation-timing-function: linear;
 }
- 
+
+
 /*keyframes rule for older Chrome, Safari, Opera*/
+
 @-webkit-keyframes rotate {
-    from {-webkit-transform: rotate(0deg);}
-    to {-webkit-transform: rotate(360deg);}
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
- 
+
+
 /*keyframes rule for older Firefox version*/
+
 @-moz-keyframes rotate {
-    from {-moz-transform: rotate(0deg);}
-    to {-moz-transform: rotate(360deg);}
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
 }
- 
+
+
 /*Default @keyframes rule*/
+
 @keyframes rotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
-
 
 .login {
   border-radius: 2px 2px 5px 5px;
@@ -63,7 +81,7 @@ select {
   color: #ccc;
 }
 
-label{
+label {
   color: #ccc;
 }
 
@@ -88,7 +106,7 @@ button {
   border-radius: 0 0 2px 2px;
   padding: 10px 10px;
 }
- 
+
 .ng-valid[required],
 .ng-valid.required {
   border-left: 5px solid #42A948;
@@ -100,4 +118,13 @@ button {
   /* red */
 }
 
+.alert {
+  color: red;
+  font: 30px;
+  /*font-family: 'Passion One', cursive;*/
+}
 
+.note{
+  font-size: 0.55em;
+
+}
