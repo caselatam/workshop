@@ -13,8 +13,8 @@
   background-color: #141414;
 }
 .workshop-cards * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  /*-webkit-box-sizing: border-box;
+  box-sizing: border-box;*/
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
@@ -29,6 +29,7 @@
   padding: 25px;
   position: relative;
 }
+
 .workshop-cards figcaption:before {
   position: absolute;
   content: '';
@@ -40,6 +41,7 @@
   border-width: 55px 0 0 400px;
   border-color: transparent transparent transparent #141414;
 }
+
 .workshop-cards figcaption button {
   padding: 5px;
   border: 1px solid #ffffff;
