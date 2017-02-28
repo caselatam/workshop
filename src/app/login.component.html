@@ -1,6 +1,12 @@
 <div class="row  justify-content-md-center">
   <div class="col col-md-5 col-lg-4 text-center">
-    <form class="login" (submit)="onSubmit()">
+    <div class="col">
+      <i class="fa fa-info fa-5x" aria-hidden="true"></i>
+    </div>
+    <div class="col-9">
+      <b>GRACIAS POR TU REGISTRO,</b> <br>en caso de no haber podido registrarte a los talleres podrás anotarte a aquellos en los que aún exista cupo durante el registro al congreso.<br>
+    </div>
+    <!--<form class="login" (submit)="onSubmit()">
       <div class="row alert">
         <div class="col">
           <i class="fa fa-exclamation fa-5x" aria-hidden="true"></i>  
@@ -11,16 +17,16 @@
       </div>
       <div class="note">En caso de inscribirte a múltiples talleres se te asignará tu primera opción de acuerdo a disponibilidad</div>
       <p class="title">¿Cuáles son tus datos?</p>
-      <input type="text" name="firstname" [(ngModel)]="attendee.name" placeholder="Nombre" required autofocus>
-      <!--<i class="fa fa-user"></i>-->
-      <input type="text" name="lastname" [(ngModel)]="attendee.lastName" placeholder="Apellidos" required>
-      <!--<i class="fa fa-user"></i>-->
-      <input type="email" name="email" [(ngModel)]="attendee.email" placeholder="Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-      <!--<i class="fa fa-key"></i>-->
-      <label for="experience">¿Haz asistido al Congreso CASE América Latina?:</label>
-      <select name="asistencia" class="form-control input-lg" id="experience" [(ngModel)]="attendee.level" required>
-        
-        <option *ngFor="let exp of experience" [ngValue]="exp.level">{{exp.description}}</option>
+      <input type="text" name="firstname" [(ngModel)]="attendee.name" placeholder="Nombre" required autofocus>-->
+    <!--<i class="fa fa-user"></i>-->
+    <!--<input type="text" name="lastname" [(ngModel)]="attendee.lastName" placeholder="Apellidos" required>-->
+    <!--<i class="fa fa-user"></i>-->
+    <!--<input type="email" name="email" [(ngModel)]="attendee.email" placeholder="Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">-->
+    <!--<i class="fa fa-key"></i>-->
+    <!--<label for="experience">¿Haz asistido al Congreso CASE América Latina?:</label>-->
+    <!--<select name="asistencia" class="form-control input-lg" id="experience" [(ngModel)]="attendee.level" required>-->
+
+    <!--<option *ngFor="let exp of experience" [ngValue]="exp.level">{{exp.description}}</option>
     </select>
       <button type="submit">
       <svg version="1.1" id="svg-spinner" xmlns="http://www.w3.org/2000/svg" width="50px" height="46.366px" viewBox="0 0 50 46.366">
@@ -50,7 +56,7 @@
           c2.653,3.019,5.339,6.009,8.012,9.011C48.25,20.94,48.247,21.003,48.278,21.129z" />
       </svg>
       <span class="state">Siguiente</span>
-    </button>
-    </form>
+    </button>-->
+    <!--</form>-->
   </div>
 </div>
